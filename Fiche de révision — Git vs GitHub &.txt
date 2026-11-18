@@ -1,0 +1,156 @@
+Fiche de révision — Git vs GitHub & Versioning (Séance 6)
+Question de la séance : comment plusieurs développeurs travaillent-ils sur le même projet sans se marcher dessus ?
+1. Pourquoi le versioning ?
+Le problème sans versioning
+• Le chaos des fichiers : projet_final.zip, projet_final_v2.zip, projet_final_v3_FINAL_OK_VRAIMENT.zip… Qui a la bonne version ?
+• Deux personnes modifient le même fichier (login.html) : Sarah change le bouton, Yanis la validation. Comment réunir les deux ? Copier-coller, envoyer un ZIP, comparer à la main… ❌ très risqué.
+La solution : le versioning
+Il permet de garder l'historique et de travailler à plusieurs sans risque :
+• Historique : savoir qui a changé quoi, et quand
+• Revenir en arrière : retrouver une ancienne version
+• Travailler à plusieurs sans écraser le travail des autres
+• Expérimenter sans casser la version principale
+2. ⭐ Git ≠ GitHub (LA question clé)
+
+Git
+GitHub
+C'est quoi ?
+Un outil de versioning
+Une plateforme en ligne qui héberge des dépôts Git
+Où ?
+Sur ton ordinateur (en local)
+Sur Internet (dans le cloud)
+Sert à
+Suivre les modifications, créer des commits et des branches, fusionner, consulter l'historique
+Héberger le repository, Pull Requests, Code Review, Issues & Kanban, espace central de l'équipe
+Fonctionne sans Internet ?
+Oui (Git est distribué : on peut commiter hors ligne)
+Non
+👉 Analogie du cours : Git = le moteur, GitHub = la plateforme collaborative.
+Autre façon de le retenir : Git, c'est l'outil qui enregistre les versions ; GitHub, c'est l'endroit où on met ces versions en ligne pour les partager et collaborer. On peut utiliser Git sans GitHub, mais GitHub repose sur Git.
+3. Les notions de base
+Repository (repo / dépôt)
+Contient le projet et tout son historique Git. L'historique est stocké dans le dossier caché .git/ (ne jamais le supprimer ni le modifier).
+• Nouveau projet local : git init → crée le dossier .git/
+• Projet déjà sur GitHub : git clone URL → récupère fichiers, historique et branches
+Les deux dépôts
+• Dépôt distant = sur GitHub, appelé origin
+• Dépôt local = sur ton ordinateur, c'est là que tu travailles
+Le cycle de base : Working Directory → Staging Area → Commit
+1.  Working Directory : les fichiers que tu modifies
+2.  Staging Area : les modifications que tu choisis d'enregistrer → git add index.html
+3.  Commit : enregistre ces modifications dans l'historique → git commit -m "Add login form"
+Bonnes pratiques de commit
+• ❌ git commit -m "changes" ou un gros commit fourre-tout (navbar + login + profil + couleurs…)
+• ✅ Un commit = une modification cohérente, avec un message clair : "Add login form", "Fix password validation"
+Voir l'état du projet
+• git status → quels fichiers ont changé (modified, untracked…)
+• git log → l'historique des commits
+4. Les branches
+Travailler directement sur main risque de casser le projet. On crée une branche indépendante pour chaque fonctionnalité ou correction.
+• git branch feature/login → crée la branche
+• git switch -c feature/login → crée la branche et s'y déplace
+• git switch feature/login → changer de branche (ancienne syntaxe : git checkout)
+• git branch → lister (* = branche actuelle) · git branch -a → inclut les distantes
+• git branch -d nom → supprimer une branche fusionnée · -D → forcer ⚠
+Nommage : ❌ branche1, test, branche-final → ✅ feature/login, fix/navbar-mobile. Préfixes : feature/, fix/, refactor/, docs/.
+5. Collaborer avec GitHub
+Push et Pull
+• git push → envoie ton travail local vers GitHub (ordinateur → GitHub)
+• git pull → récupère les changements de GitHub sur ton ordi (GitHub → ordinateur)
+• git fetch → récupère les nouveautés sans toucher à tes fichiers (pour regarder avant d'intégrer)
+• 👉 git pull = git fetch + git merge
+Pull Request (PR)
+« Je voudrais intégrer mes changements dans une autre branche » (ex. feature/login → main). Une PR contient : une description, l'Issue correspondante, les tests faits, des screenshots si c'est de l'UI. C'est une fonctionnalité de GitHub, pas de Git.
+Code Review
+L'équipe relit le code avant le merge : fonctionnement, lisibilité, cohérence, bugs, conventions, sécurité, tests.
+• ❌ « C'est mauvais. » « Change ça. »
+• ✅ « Cette logique fonctionne, mais elle pourrait aller dans une fonction séparée. »
+• 👉 Critiquer le code, pas la personne.
+Merge
+Les changements sont intégrés dans la branche cible. Le processus : Pull Request → Code Review → Approve → Merge. Une PR n'est pas juste « envoyer du code », c'est un processus de collaboration.
+Le cycle quotidien du développeur
+1.  git pull (règle d'or : toujours pull avant de commencer)
+2.  Créer / utiliser une branche
+3.  Modifier le code
+4.  git status
+5.  git add
+6.  git commit
+7.  git push
+8.  Pull Request
+Le workflow de l'équipe (lien avec l'Agile)
+Product Backlog → GitHub Issue → Branche → Développement → Commit / Push → Pull Request → Code Review → Merge → Done.
+6. Les conflits Git
+Quand y a-t-il un conflit ?
+Quand deux branches modifient le même passage (la même ligne) différemment. Si elles touchent des lignes différentes, Git fusionne automatiquement. Sur la même ligne, Git ne devine pas : il te demande de choisir.
+Lire les marqueurs
+<<<<<<< HEAD
+<li>Contact</li>      ← TA version (la branche où tu es)
+=======
+<li>Blog</li>         ← LEUR version (la branche que tu fusionnes)
+>>>>>>> feature
+Les marqueurs ne doivent jamais rester dans le code final.
+Résoudre en 5 étapes
+1.  git merge feature → Git annonce CONFLICT
+2.  git status → repérer les fichiers « both modified »
+3.  Corriger dans l'éditeur : garder la tienne, la leur, ou les deux, puis effacer les marqueurs
+4.  git add fichier → dire à Git que c'est réglé
+5.  git commit → enregistrer la fusion (puis tester et push)
+Besoin d'annuler ? git merge --abort. Règle : ne jamais résoudre un conflit sans comprendre les deux versions.
+Niveau avancé : la fusion à 3 versions
+Git compare Base (l'ancêtre commun), Ours (ta branche) et Theirs (l'autre branche). Si un seul côté a changé → Git prend ce changement. Si les deux ont fait le même changement → OK. Si les deux ont changé différemment → CONFLIT. Avec git config --global merge.conflictStyle diff3, on voit aussi la version d'origine dans le conflit.
+7. Bonnes pratiques du repository
+• .gitignore : liste les fichiers à ne pas envoyer sur GitHub (inutiles, générés, lourds ou sensibles) : node_modules/, .env, dist/, .DS_Store
+• Jamais de secrets (mot de passe, clé d'API, fichier .env) dans un dépôt
+• README.md : la page d'accueil du projet, explique ce qu'il fait et comment l'installer / le lancer
+• Un dépôt = un projet · commits petits et clairs · une branche par tâche
+• Nom de dépôt : minuscules et tirets (portfolio-meteo), pas Projet Final (1)
+Configuration (une seule fois)
+git config --global user.name "Prénom Nom"
+git config --global user.email "toi@exemple.be"
+git config --global init.defaultBranch main
+Pour se connecter à GitHub en HTTPS, le mot de passe du compte n'est plus accepté : utiliser Git Credential Manager, un jeton d'accès personnel ou une clé SSH.
+8. Commandes complémentaires
+Commande
+Rôle
+git diff
+Voir les modifs pas encore ajoutées (dossier ↔ staging)
+git diff --staged
+Voir ce qui est prêt à être commité (staging ↔ dernier commit)
+git restore fichier
+Annuler les modifs non indexées d'un fichier
+git restore --staged fichier
+Retirer un fichier de la staging area
+git reset --soft HEAD~1
+Annuler le dernier commit, garder les modifs
+git reset --hard HEAD~1
+Annuler le commit et les modifs ⚠ (perdues)
+git revert HEAD
+Inverser un commit déjà poussé (crée un nouveau commit)
+git stash / git stash pop
+Mettre de côté son travail non commité / le récupérer
+git tag v1.0
+Marquer une version
+⚠ reset réécrit l'historique → seulement en local. Sur un commit déjà poussé → revert.
+Erreurs fréquentes
+• fatal: not a git repository → tu n'es pas dans le dossier du dépôt → cd dedans
+• rejected (fetch first) → GitHub a des commits que tu n'as pas → git pull puis git push
+• Authentication failed → utiliser Credential Manager, un jeton ou SSH
+• Repository not found → vérifier l'URL et tes droits
+✅ À savoir réciter
+1.  Git = outil de versioning en local (le moteur). GitHub = plateforme en ligne pour héberger et collaborer (PR, Code Review, Issues).
+2.  Cycle : modifier → add (staging) → commit → push.
+3.  Toujours git pull avant de commencer.
+4.  Une branche par tâche, jamais directement sur main.
+5.  PR → Code Review → Approve → Merge.
+6.  Conflit = même ligne modifiée différemment → comprendre, choisir, effacer les marqueurs, add, commit.
+7.  git pull = fetch + merge.
+8.  .gitignore + README + aucun secret.
+🧠 Auto-test
+• Explique la différence entre Git et GitHub en deux phrases.
+• Peut-on utiliser Git sans GitHub ? Et l'inverse ?
+• Différence entre git add et git commit ? Entre push et pull ? Entre fetch et pull ?
+• Pourquoi créer une branche ? Donne deux bons noms de branche.
+• Qu'est-ce qu'une Pull Request et qu'est-ce qu'on met dedans ?
+• Quand un conflit apparaît-il ? Quelles sont les 5 étapes pour le résoudre ?
+• Pourquoi utiliser revert plutôt que reset sur un commit déjà poussé ?

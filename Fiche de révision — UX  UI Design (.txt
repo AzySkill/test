@@ -1,0 +1,131 @@
+Fiche de révision — UX / UI Design (Séance 1)
+Question de départ du cours : pourquoi certaines applications sont faciles à utiliser alors que d'autres nous énervent tout de suite ?
+1. Le point de départ : le problème vient souvent de la conception
+Exemple du cours : tu veux juste un billet de train Bruxelles → Liège demain à 18h, mais l'appli te demande ton type de voyage, ta catégorie, ta zone, ton profil, ton abonnement…
+Le problème ne vient pas forcément de la technologie. Il vient de la façon dont le système a été pensé pour l'utilisateur. C'est exactement ce que l'UX essaie de résoudre.
+2. UX vs UI — la différence à connaître par cœur
+UX = User Experience
+C'est l'expérience vécue par l'utilisateur quand il utilise un produit ou un service. On regarde :
+• la facilité d'utilisation et la compréhension
+• l'efficacité
+• les erreurs et la frustration
+• la satisfaction
+• le sentiment de contrôle
+Exemple — consulter son horaire :
+• ✅ Bonne UX : Application → Planning → Aujourd'hui → cours affichés. L'info est trouvée vite.
+• ❌ Mauvaise UX : Accueil → Menu → Mes services → Scolarité → Informations → Planning. L'info existe, mais elle est difficile à trouver.
+UI = User Interface
+C'est l'interface avec laquelle l'utilisateur interagit, la partie visible :
+• Couleurs & typographie : palette, hiérarchie visuelle, lisibilité
+• Composants : boutons, icônes, menus, formulaires
+• Mise en page : espacements, images, animations
+Exemple : même fonction, deux UI différentes → [ Valider ] vs ✓ Confirmer ma réservation (le second est plus clair).
+La phrase à retenir
+
+UI
+UX
+Ce qu'on dit
+« C'est beau »
+« C'est facile et efficace »
+Ce que ça décrit
+Comment l'interface se présente
+Comment l'expérience fonctionne
+Une interface peut être belle… mais mauvaise. Belles couleurs, belles animations, mais 7 écrans pour une action simple = bonne UI, mauvaise UX.
+Cas pratique du cinéma : l'interface A (film, date, heure, réserver) va droit au but ; l'interface B noie l'utilisateur sous les options (2D, 3D, IMAX, VIP, Dolby, Premium…). Une interface se pense selon le contexte, le besoin, l'utilisateur et l'objectif.
+3. L'ergonomie
+Définition : adapter le système aux capacités et aux besoins humains.
+Une interface ergonomique permet à l'utilisateur de :
+1.  comprendre
+2.  agir
+3.  atteindre son objectif
+4.  éviter les erreurs
+5.  récupérer après une erreur
+Exemple : un champ téléphone qui affiche « Error 400 » ❌ → l'utilisateur ne sait pas quoi corriger. Mieux ✅ : « Veuillez saisir un numéro au format +32 4XX XX XX XX ». L'interface explique comment réussir.
+Erreur fréquente : penser comme le développeur
+Le concepteur se dit « moi je comprends, donc l'utilisateur comprendra ». Faux : l'utilisateur ne connaît pas la logique interne ni les termes techniques. Un bouton [ Sync ] ne veut rien dire pour lui → mieux : 🔄 Synchroniser mes données.
+4. Les 3 questions fondamentales de l'UX
+Question
+Signification
+Exemple
+QUI ?
+Qui utilise le produit ?
+Un étudiant
+POURQUOI ?
+Quel problème veut-il résoudre ?
+Savoir où et quand aller en cours
+QUOI ?
+Quel objectif veut-il atteindre ?
+Consulter rapidement son horaire
+• ❌ Mauvaise approche : « On va faire une appli avec calendrier, chat, forum, messagerie, statistiques… »
+• ✅ Bonne approche : « Notre utilisateur a un problème précis. Comment l'aider à le résoudre ? »
+5. Le persona (et la règle d'or)
+Ton cours de la séance 1 ne détaille pas le persona, mais il en pose la base avec la question « QUI ? » et la règle d'or. Voici ce qu'il faut savoir.
+C'est quoi un persona ?
+Un persona est un utilisateur fictif mais réaliste, construit à partir d'observations ou de recherches sur les vrais utilisateurs. Il représente un groupe d'utilisateurs typiques. Il sert à répondre concrètement à la question QUI ? et à garder en tête pour qui on conçoit.
+À quoi ça sert ?
+• Concevoir pour une personne réelle, pas « pour tout le monde » ni pour soi-même
+• Mettre toute l'équipe d'accord sur l'utilisateur cible
+• Prendre des décisions : « Est-ce que Léa utiliserait vraiment cette fonctionnalité ? »
+Ce qu'on met dans un persona
+• Identité : prénom, âge, photo, situation (étudiant, travailleur…)
+• Contexte : où et comment il utilise le produit (sur son téléphone, dans le train…)
+• Objectifs : ce qu'il veut accomplir
+• Frustrations / problèmes : ce qui le bloque aujourd'hui
+• Habitudes et niveau numérique : à l'aise ou pas avec la technologie
+• Souvent une citation qui résume son état d'esprit
+Exemple de persona (projet fil rouge)
+Léa, 19 ans, étudiante en 1re année
+• Utilise surtout son smartphone, souvent dans le bus
+• Objectif : savoir rapidement où et quand est son prochain cours, et ne pas oublier ses devoirs
+• Frustrations : le planning est caché dans 5 menus, elle oublie ses échéances
+• Niveau numérique : à l'aise avec les réseaux sociaux, mais ne connaît aucun raccourci technique
+• « Je veux juste savoir où je dois aller, sans chercher pendant 5 minutes. »
+La règle d'or : Don't design for yourself
+Ne conçois pas « comme moi j'aimerais que ça marche ». Conçois pour la personne qui va réellement utiliser le produit. Exemple : toi, développeur, tu utilises Ctrl + Shift + P ; un utilisateur normal ne connaît pas ce raccourci. Le persona sert justement à ça : se mettre à la place de l'utilisateur.
+6. Objectif utilisateur ≠ fonctionnalité
+Fonctionnalité
+Objectif utilisateur
+Afficher un calendrier
+Savoir à quelle heure commence son prochain cours
+L'utilisateur dit : « Je veux un bouton pour exporter en PDF. » Le concepteur doit se demander pourquoi ? Peut-être qu'il veut juste son planning hors connexion → une autre solution peut être meilleure.
+👉 Ne conçois pas seulement ce que l'utilisateur demande. Comprends pourquoi il le demande.
+7. Les principes UX fondamentaux
+Parcours utilisateur (User Journey)
+La suite d'étapes que l'utilisateur fait pour atteindre son objectif. Ex. : Ouvrir l'appli → Se connecter → Accueil → Planning → Aujourd'hui → Prochain cours. Chaque étape en trop coûte de l'effort.
+Charge cognitive
+Une bonne interface réduit l'effort mental et physique.
+• ❌ Sélectionner → Options → Actions → Gestion → Supprimer → Confirmer
+• ✅ Sélectionner → 🗑 Supprimer → Confirmer
+Attention : simplifier ≠ tout supprimer. Il faut un équilibre Simplicité + Compréhension + Sécurité.
+Feedback
+L'utilisateur doit savoir ce qui se passe (l'état du système). Si je clique sur « Enregistrer » et que rien ne se passe, je pense que le bouton ne marche pas ou que ma connexion est coupée. Avec feedback : « ✓ Modifications enregistrées ».
+Gestion des erreurs
+Une bonne interface ne suppose pas que l'utilisateur ne se trompera jamais.
+• ❌ « Erreur »
+• ✅ « Adresse e-mail invalide. Exemple : nom@example.com »
+• ⭐ Encore mieux : prévenir l'erreur quand c'est possible.
+Affordance
+La façon dont un élément suggère comment l'utiliser. Exemple réel : une poignée de porte → sa forme dit « tire-moi ».
+• Un bouton doit ressembler à un bouton (relief, ombre, couleur pleine). Un mot sans contour ne semble pas cliquable.
+• Un champ de saisie doit inviter à écrire (bordure visible, fond blanc, texte grisé).
+• Si on doit ajouter un texte d'aide pour expliquer l'usage, l'affordance a échoué.
+• 👉 Le design doit se comprendre avant de se lire.
+Cohérence (prévisibilité)
+Si le bouton principal est en bas à droite, il reste en bas à droite partout. Une icône 🗑 = Supprimer garde ce sens partout. Pourquoi ? Ça réduit l'effort mental, les erreurs et le temps d'apprentissage.
+Moins, mais mieux
+Une bonne UX n'est pas une interface complexe. Pour la météo : ville, température, quelques heures. Pas besoin de 15 menus, 20 boutons, 5 animations. Chaque élément doit avoir une raison d'être.
+8. Le projet fil rouge
+Les 4 questions du jour : QUI ? QUEL PROBLÈME ? QUEL OBJECTIF ? QUELLE SOLUTION ?
+• ❌ Ne commence pas par : « Quelle application voulons-nous créer ? »
+• ✅ Commence par : « Quel problème voulons-nous résoudre ? »
+Exemple : Problème — les étudiants ont du mal à suivre cours, devoirs et échéances. Solution potentielle — une appli pour consulter son planning, voir ses tâches et recevoir des rappels. Ce n'est qu'une hypothèse à vérifier.
+Feuille de route : S1 Problème & utilisateur · S2 Principes UX/UI · S3 Recherche & tests · S4 Concevoir l'interface · S5 Agile · S6 GitHub · S7 Tester & debugger · S8 Finaliser & présenter.
+✅ À savoir réciter
+1.  UX = l'expérience vécue (facile, efficace). UI = l'interface visible (couleurs, boutons, mise en page).
+2.  Une interface peut être belle (bonne UI) mais pénible (mauvaise UX).
+3.  Ergonomie = adapter le système à l'humain : comprendre, agir, atteindre son objectif, éviter et récupérer des erreurs.
+4.  Les 3 questions : QUI ? POURQUOI ? QUOI ?
+5.  Persona = utilisateur fictif mais réaliste, avec objectifs et frustrations → on conçoit pour lui, pas pour soi.
+6.  Objectif utilisateur ≠ fonctionnalité : toujours demander « pourquoi ? ».
+7.  Principes : parcours court, faible charge cognitive, feedback, bons messages d'erreur, affordance, cohérence, moins mais mieux.
+8.  Commencer par le problème, pas par l'application.

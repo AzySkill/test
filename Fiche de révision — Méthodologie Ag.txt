@@ -1,0 +1,150 @@
+Fiche de révision — Méthodologie Agile & Scrum (Séance 5)
+Question de la séance : comment transformer un prototype (UX/UI) en un vrai projet développé en équipe ?
+1. Pourquoi l'Agile ?
+Le problème du projet classique
+Une équipe travaille 6 mois sans jamais montrer son travail :
+• Mois 1 : « On a compris quoi développer. »
+• Mois 2 à 4 : « On est encore en développement. »
+• Mois 5 : « On a presque fini. »
+• Mois 6 : le client découvre le produit… « Ce n'est pas ce que je voulais. »
+👉 Problème : l'équipe découvre l'erreur beaucoup trop tard.
+Traditionnel vs Agile
+Approche traditionnelle (en cascade)
+Approche Agile
+Analyse → Design → Développement → Tests → Livraison
+Sprint 1 → version utilisable → feedback, Sprint 2 → amélioration → feedback, Sprint 3…
+On attend longtemps avant d'avoir un produit utilisable
+Résultats rapides, feedback régulier, adaptation continue
+Le principe fondamental : adapter, pas prédire
+• ❌ « On sait exactement ce qu'on va faire pendant les 4 prochains mois. »
+• ✅ « On sait quelle valeur on veut créer maintenant, et on est capables d'adapter la suite selon ce qu'on apprend. »
+Les 4 valeurs du Manifeste Agile
+(complément : ce sont les 4 valeurs classiques que le cours mentionne)
+1.  Les individus et leurs interactions plutôt que les processus et les outils
+2.  Un logiciel qui fonctionne plutôt qu'une documentation exhaustive
+3.  La collaboration avec le client plutôt que la négociation de contrat
+4.  L'adaptation au changement plutôt que le suivi d'un plan
+Les idées reçues (pièges d'examen !)
+• « En Agile, on ne planifie rien » → FAUX. On planifie, mais on accepte d'adapter (ex. : après un test utilisateur, les priorités changent).
+• « L'objectif est d'aller très vite » → FAUX. L'objectif est de créer de la valeur régulièrement, pas de coder 20 fonctionnalités avant de tester.
+• L'Agile n'est pas une excuse pour travailler sans organisation.
+2. Scrum : le cadre et les rôles
+Scrum = un framework Agile qui organise le travail d'une équipe avec des rôles, un Product Backlog, des Sprints, des événements et un Increment. Une équipe Scrum compte environ 4 à 9 personnes.
+Le cycle Scrum
+Product Backlog → Sprint Planning → Sprint (avec Daily Scrum chaque jour) → Increment → Sprint Review → Rétrospective → nouveau Sprint.
+Chaque Sprint produit un Increment utilisable, recueille du feedback et permet d'ajuster le Product Backlog.
+Les 3 rôles
+Rôle
+Ce qu'il fait
+Ce qu'il se demande / exemple
+Product Owner (PO)
+Maximise la valeur du produit, décide quoi construire et dans quel ordre, gère le Product Backlog
+« Qu'est-ce qui apporte le plus de valeur ? » → Backlog : Chat, Profil, Planning… Décision : « Planning est prioritaire. »
+Scrum Master
+Aide l'équipe à appliquer Scrum, supprime les obstacles, améliore la collaboration. Ce n'est PAS le chef : il facilite, il ne dirige pas
+Un dev dit « Je suis bloqué, pas d'accès à l'API » → le SM aide à faire remonter et résoudre le blocage
+Developers
+Construisent le produit et créent l'Increment (front, back, intégrateur, testeur, designer…)
+Responsabilité collective + auto-organisation : l'équipe décide comment faire le travail
+👉 Dans une équipe Agile, l'équipe est collectivement responsable du résultat.
+3. Product Backlog & User Stories
+Le Product Backlog
+La liste complète et ordonnée (priorisée) de tout ce dont le produit pourrait avoir besoin, gérée par le Product Owner. Ce n'est pas juste une liste de fonctionnalités : on doit comprendre la valeur de chaque élément. Il contient tout le produit, bien plus que ce qu'on peut faire en un Sprint.
+Le Sprint Backlog
+Le sous-ensemble du Product Backlog choisi pour le Sprint en cours, découpé en tâches concrètes par l'équipe. Il appartient à l'équipe de développement et peut évoluer chaque jour.
+Product Backlog
+Sprint Backlog
+Tout le produit
+Seulement ce Sprint
+Géré par le Product Owner
+Appartient aux Developers
+User stories priorisées
+User stories découpées en tâches, avec un responsable et un statut (To Do / In Progress / Done)
+La User Story
+Formule à connaître :
+En tant que [type d'utilisateur], je veux [action] afin de [bénéfice].
+• ❌ « Créer une page HTML pour le planning. » → c'est une tâche technique, pas une valeur.
+• ✅ « En tant qu'étudiant, je veux consulter mon planning afin de connaître mes prochains cours. » → Qui ? étudiant · Quoi ? consulter son planning · Pourquoi ? connaître ses prochains cours.
+Le « afin de… » = la valeur apportée. C'est ce qui aide le PO à trier.
+User Story ≠ tâche technique
+La User Story exprime le besoin. Les tâches expliquent comment l'équipe va le réaliser. Ex. : la story « consulter mon planning » se découpe en : créer le composant Planning, créer l'API /planning, créer la route, afficher les données, gérer le chargement, gérer les erreurs, tester le composant.
+Critères d'acceptation
+Ils disent quand la fonctionnalité est correcte. Ex. pour « consulter mon prochain cours » :
+• le prochain cours est affiché
+• l'heure, le nom du cours et la salle sont affichés
+• s'il n'y a aucun cours, un message adapté s'affiche
+Definition of Done (DoD)
+Une norme commune à toute l'équipe pour dire qu'un travail est vraiment fini : développé · relu · testé · sans bug bloquant · conforme aux critères d'acceptation · intégré dans la bonne branche · présentable.
+👉 « J'ai écrit le code » ≠ « C'est terminé ».
+Ne pas confondre : les critères d'acceptation sont propres à chaque story ; la Definition of Done est la même pour toutes.
+4. Prioriser & planifier
+Valeur vs effort
+Tout ne peut pas être prioritaire. On compare :
+Fonctionnalité
+Valeur
+Effort
+Planning
+Haute
+Moyen
+Chat
+Moyenne
+Très élevé
+Profil
+Faible
+Faible
+Notifications
+Haute
+Moyen
+Décision : commencer par Planning + Notifications plutôt que par le Chat. Question clé : qu'est-ce qui apporte le plus de valeur à l'utilisateur ?
+La méthode MoSCoW
+• M — Must have (indispensable) : sans ça le produit ne marche pas. Ex. : payer sa commande.
+• S — Should have (important) : forte valeur mais on peut s'en passer. Ex. : e-mail de confirmation.
+• C — Could have (souhaitable) : bonus, retiré en premier si on manque de temps. Ex. : thème sombre.
+• W — Won't have (pas cette fois) : exclu pour l'instant, mais noté. Ex. : payer en cryptomonnaie.
+Repère : environ 60 % de Must, le reste en Should/Could. Les « o » servent juste à prononcer le mot.
+Le MVP (Minimum Viable Product)
+La plus petite version du produit qui apporte une vraie valeur et permet d'apprendre. Ex. pour l'appli scolaire : Connexion + Planning + Consultation d'un cours. Question : quelle est la plus petite version qui résout vraiment le problème ?
+Le Sprint & le Sprint Goal
+• Sprint = une période de travail fixe (souvent 2 semaines) : planning, développement, tests, corrections → version utilisable.
+• Sprint Goal = l'objectif du Sprint.
+    ◦ ❌ « Terminer 15 tickets. »
+    ◦ ✅ « Permettre à l'étudiant de consulter son prochain cours. »
+Estimation : Story Points & Planning Poker
+Les Story Points = estimation relative de la complexité, pas des heures. Échelle : 1 (très simple) · 2 (simple) · 3 (moyen) · 5 (complexe) · 8 (très complexe) · 13 = à découper.
+Planning Poker : chacun vote en même temps, puis on discute les écarts. Ex. : votes 2, 5, 5, 8 → « Pourquoi 8 ? » → « Le responsive est complexe » → accord final : 5.
+5. Suivre & améliorer
+Le Daily Scrum
+Point d'équipe quotidien de 15 minutes. Chacun répond à 3 questions :
+1.  Qu'ai-je fait ?
+2.  Que vais-je faire ?
+3.  Quel obstacle ai-je ?
+• ❌ Mauvais Daily : « Ça avance bien. » — « Moi aussi. » → un simple rapport au chef.
+• ✅ Bon Daily : centré sur le Sprint Goal, chacun dit précisément où il en est, les blocages sont identifiés et une décision est prise (ex. : « l'API renvoie une erreur → Marc et Alex analysent »).
+Kanban & limite WIP
+• Kanban = tableau visuel (ex. Trello) avec des colonnes : Product Backlog → Sprint Backlog → En cours → Terminé. On voit le travail.
+• WIP (Work In Progress) = limiter le nombre de tâches « En cours » en même temps (ex. max 2). Idée : finir avant de recommencer.
+Sprint Review vs Rétrospective (fin de Sprint)
+Sprint Review
+Rétrospective
+Porte sur le produit (le résultat)
+Porte sur la façon de travailler de l'équipe
+On montre l'Increment : « Voici la consultation du planning »
+👍 Ce qui a bien marché · 👎 Ce qui a mal marché · 💡 Ce qu'on change
+Feedback → le Product Backlog évolue (« il faut pouvoir filtrer par jour »)
+Actions concrètes → ex. limite WIP = 2, critères rédigés avant le Sprint Planning, découper une story trop grosse
+6. Projet fil rouge : du prototype au backlog
+On ne dit pas aux devs « Développez l'application ». On transforme le prototype en : inventaire des fonctionnalités → User Stories → critères d'acceptation → découpage en tâches → estimation (Story Points) → priorisation (MoSCoW) → Sprint Goal → Sprint Backlog.
+✅ L'Agilité en 4 idées (à retenir)
+1.  Adapter, pas prédire : le plan évolue Sprint après Sprint.
+2.  User Story + critères : exprimer un besoin puis le rendre vérifiable et priorisable.
+3.  Rôles Scrum : Product Owner, Scrum Master, Developers, responsabilité collective.
+4.  Visualiser & limiter : Kanban, WIP, Daily, on voit le travail et on finit avant de recommencer.
+🧠 Auto-test
+• Pourquoi le modèle en cascade pose problème ? Donne l'exemple des 6 mois.
+• « En Agile on ne planifie pas » : vrai ou faux ? Pourquoi ?
+• Quelle est la différence entre le Product Owner et le Scrum Master ?
+• Écris une User Story pour ton projet avec 3 critères d'acceptation.
+• Différence entre critères d'acceptation et Definition of Done ?
+• Que veut dire MoSCoW ? Donne un exemple pour chaque lettre.
+• Une story vaut 13 points : que fais-tu ?
+• Différence entre Sprint Review et Rétrospective ?
